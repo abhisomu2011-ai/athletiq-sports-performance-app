@@ -1,0 +1,1343 @@
+Build a complete mobile-first sports development app called ATHLETIQ.
+
+IMPORTANT:
+I am a student and I want this project to be as simple as possible to build and run. Do NOT give me a long list of setup steps. Build the application directly in this Replit project.
+
+The app should feel like a real polished sports-performance application, not a basic demo.
+
+APP NAME:
+Athletiq
+
+TAGLINE:
+Train Smarter. Perform Better.
+
+AI SPORTS ASSISTANT:
+Rahul
+
+SUPPORTED SPORTS:
+1. Cricket
+2. Football
+3. Tennis
+4. Basketball
+
+==================================================
+1. TECHNICAL REQUIREMENTS
+==================================================
+
+Build this as a responsive mobile-first PWA/web application.
+
+Use the most suitable modern stack that Replit supports well, preferably:
+
+- React
+- TypeScript
+- Tailwind CSS
+- Modern component architecture
+- Responsive design
+- Local persistence for offline/demo functionality
+
+Use a backend/database only where it is practical.
+
+IMPORTANT:
+The application must still work if external API keys are not available.
+
+Do not make the entire application dependent on paid APIs.
+
+Use mock/demo data where a real external service is not yet connected.
+
+Make the architecture modular so real APIs can be connected later.
+
+Never expose API keys in frontend code.
+
+Create a clean README explaining only the essential setup.
+
+==================================================
+2. BRAND DESIGN
+==================================================
+
+Athletiq should look like a premium modern sports-performance app.
+
+Brand personality:
+
+- Athletic
+- Modern
+- Fast
+- Clean
+- Confident
+- Motivating
+- Data-driven
+
+Color palette:
+
+Primary Green:
+#16C784
+
+Secondary Blue:
+#3B82F6
+
+Accent Orange:
+#FF8A3D
+
+Dark Background:
+#0B0F14
+
+Secondary Dark:
+#121820
+
+Card:
+#18212B
+
+Elevated Card:
+#202B36
+
+Light Background:
+#F6F8FA
+
+Light Secondary:
+#EEF2F5
+
+White:
+#FFFFFF
+
+Primary text:
+#FFFFFF
+
+Secondary text:
+#A7B0BA
+
+Success:
+#16C784
+
+Warning:
+#F5B942
+
+Error:
+#EF4444
+
+Use dark mode as the main experience.
+
+Use Inter or a similar modern sans-serif font.
+
+Use an 8-point spacing system.
+
+Use rounded cards, approximately 16px radius.
+
+Buttons should be modern and easy to tap.
+
+Avoid excessive animations.
+
+The app should feel similar to a combination of:
+
+- sports performance dashboard
+- modern fitness app
+- social media app
+- AI assistant
+
+==================================================
+3. AUTHENTICATION
+==================================================
+
+Create:
+
+- Splash screen
+- Welcome screen
+- Login
+- Sign up
+- Forgot password
+- Google login UI
+- Email login UI
+
+If real authentication cannot be configured automatically, create a working demo authentication system using local persistence.
+
+After login, send the user to onboarding.
+
+==================================================
+4. ATHLETE ONBOARDING
+==================================================
+
+Create a multi-step onboarding flow.
+
+Collect:
+
+- Name
+- Age
+- Height
+- Weight
+- Primary sport
+- Other sports
+- Level of play
+  - Beginner
+  - Intermediate
+  - Advanced
+  - Competitive
+- Position/event
+
+Cricket:
+- Batter
+- Bowler
+- All-rounder
+- Wicketkeeper
+
+Football:
+- Goalkeeper
+- Defender
+- Midfielder
+- Forward
+
+Basketball:
+- Point Guard
+- Shooting Guard
+- Small Forward
+- Power Forward
+- Center
+
+Tennis:
+- Singles
+- Doubles
+- Both
+
+Also collect:
+
+- Years of experience
+- Training frequency
+- Training days
+- Main goals
+- Available equipment
+- Training location
+- Nutrition preferences
+- Dietary preference
+- Preferred foods
+
+Create a progress indicator during onboarding.
+
+Save the information.
+
+==================================================
+5. HOME DASHBOARD
+==================================================
+
+Create a polished home dashboard.
+
+Show:
+
+- Greeting
+- User profile image
+- Current sport
+- Current level
+- Today's training
+- Training streak
+- Weekly training time
+- Progress
+- Personal records
+- Current goals
+- Recommended workouts
+- Recommended drills
+- Nutrition recommendation
+- Upcoming matches
+- Live matches
+- Challenges
+- Rahul recommendation
+
+Example:
+
+"Good morning, Alex"
+
+"Today's Focus"
+
+"Improve your acceleration"
+
+Then show a workout card.
+
+Create a Rahul card:
+
+"Ask Rahul"
+
+Example prompts:
+
+- What should I train today?
+- How can I improve my batting?
+- Prepare me for my next match
+- Give me a recovery workout
+
+==================================================
+6. TRAINING SYSTEM
+==================================================
+
+Create a TRAIN section.
+
+Users should be able to:
+
+- Browse workouts
+- Browse drills
+- Search drills
+- Filter by sport
+- Filter by difficulty
+- Filter by duration
+- Filter by goal
+- Save/bookmark drills
+- Start workouts
+- Complete workouts
+- Track workout history
+
+Sports:
+
+Cricket
+Football
+Tennis
+Basketball
+
+Create realistic sample content.
+
+Do NOT create empty cards.
+
+Create at least:
+
+10 drills per sport
+
+5 workouts per sport
+
+That means at least:
+
+40 drills
+
+20 workouts
+
+Each drill should contain:
+
+- Name
+- Sport
+- Category
+- Difficulty
+- Duration
+- Equipment
+- Description
+- Instructions
+- Common mistakes
+- Coach tip
+- Thumbnail/image placeholder
+- Video placeholder
+
+Each workout should contain:
+
+- Name
+- Sport
+- Goal
+- Difficulty
+- Duration
+- Warm-up
+- Exercises/drills
+- Sets
+- Reps
+- Rest
+- Cooldown
+
+==================================================
+7. ACTIVE WORKOUT
+==================================================
+
+When the user starts a workout, create an active workout screen.
+
+Show:
+
+- Current drill
+- Timer
+- Sets
+- Reps
+- Instructions
+- Video area
+- Next drill
+- Previous drill
+- Pause
+- Skip
+- Complete
+
+At the end show:
+
+WORKOUT COMPLETE
+
+Include:
+
+- Duration
+- Completion percentage
+- Exercises completed
+- Calories estimate
+- Personal progress
+- Streak update
+
+Save the workout in training history.
+
+==================================================
+8. PERFORMANCE ANALYTICS
+==================================================
+
+Create a performance dashboard.
+
+Show:
+
+- Training time
+- Workouts completed
+- Training streak
+- Completion rate
+- Personal records
+- Weekly progress
+- Monthly progress
+
+Create charts.
+
+Allow users to view progress over:
+
+- 7 days
+- 30 days
+- 3 months
+
+Create sport-specific sample metrics.
+
+Cricket:
+
+- Batting consistency
+- Reaction time
+- Bowling accuracy
+- Throwing accuracy
+- Sprint speed
+
+Football:
+
+- Sprint speed
+- Passing accuracy
+- Shooting accuracy
+- Dribbling
+- Stamina
+
+Tennis:
+
+- Serve accuracy
+- Rally consistency
+- Movement
+- Reaction time
+- Shot accuracy
+
+Basketball:
+
+- Shooting accuracy
+- Free throw percentage
+- Dribbling
+- Sprint speed
+- Vertical jump
+
+==================================================
+9. VIDEO PERFORMANCE ANALYSIS
+==================================================
+
+Create a video analysis feature.
+
+User should be able to:
+
+- Upload a video
+- Select sport
+- Select analysis type
+- Start analysis
+
+Analysis types:
+
+- Technique
+- Movement
+- Speed
+- Form
+- Sport-specific analysis
+
+IMPORTANT:
+
+If actual AI computer vision is not available, DO NOT pretend that the app performed real AI analysis.
+
+Instead:
+
+Create a clearly labeled DEMO ANALYSIS mode.
+
+Show simulated analysis results such as:
+
+Overall Score: 78
+
+Technique: 82
+
+Movement: 74
+
+Balance: 80
+
+Consistency: 76
+
+Then show:
+
+Strengths
+
+Areas to improve
+
+Recommended drills
+
+Recommended workouts
+
+Clearly label demo/mock analysis where necessary.
+
+Create the architecture so a real computer vision model can be connected later.
+
+==================================================
+10. RAHUL AI ASSISTANT
+==================================================
+
+Create a major feature called:
+
+RAHUL
+
+Rahul is Athletiq's AI sports assistant.
+
+Create:
+
+- Rahul home
+- Chat interface
+- Suggested questions
+- Conversation history
+- Recommended workouts
+- Recommended drills
+- Goal assistance
+- Match preparation
+- Video-analysis explanations
+
+Example questions:
+
+"What should I train today?"
+
+"How can I improve my batting?"
+
+"Give me a football workout."
+
+"How do I improve my shooting?"
+
+"Prepare me for my match tomorrow."
+
+"Why is my progress slow?"
+
+"Give me a recovery session."
+
+Rahul should use the user's profile information when available.
+
+For example:
+
+If the user is a beginner cricket batter, Rahul should recommend beginner batting drills rather than advanced basketball drills.
+
+IMPORTANT:
+
+If no AI API key is available, create a DEMO RAHUL mode.
+
+The demo assistant should still provide useful predefined responses based on:
+
+- sport
+- level
+- goal
+- training history
+
+Structure the code so a real AI API can be connected later.
+
+Do not expose API keys.
+
+==================================================
+11. PERSONALIZED GOALS
+==================================================
+
+Create:
+
+MY GOALS
+
+Users can create goals.
+
+Examples:
+
+- Improve batting
+- Run faster
+- Increase shooting accuracy
+- Improve stamina
+- Improve serve accuracy
+
+Each goal should contain:
+
+- Current value
+- Target value
+- Unit
+- Target date
+- Progress
+- Estimated time
+
+IMPORTANT:
+
+Never promise an exact time to reach a goal.
+
+Use estimates such as:
+
+"Estimated time: 10–16 weeks"
+
+based on the available information.
+
+==================================================
+12. GOAL ROADMAP
+==================================================
+
+Create a visual roadmap.
+
+Example:
+
+GOAL:
+Improve sprint speed
+
+Current:
+5.2 seconds
+
+Target:
+4.7 seconds
+
+Roadmap:
+
+Week 1–2
+Build movement fundamentals
+
+Week 3–5
+Acceleration training
+
+Week 6–8
+Sprint technique
+
+Week 9–12
+Advanced speed training
+
+Show:
+
+- completed milestones
+- current milestone
+- upcoming milestones
+
+Allow the roadmap to update as the athlete progresses.
+
+==================================================
+13. NUTRITION
+==================================================
+
+Create a nutrition section.
+
+Show:
+
+- Daily nutrition overview
+- Breakfast
+- Lunch
+- Dinner
+- Snacks
+- Pre-workout meal
+- Post-workout meal
+- Hydration
+
+Personalize recommendations using:
+
+- Sport
+- Training frequency
+- Training time
+- Goal
+- Dietary preference
+- Food preferences
+
+Include Indian and international food options.
+
+Examples:
+
+Indian:
+
+- Idli
+- Dosa
+- Rice
+- Dal
+- Paneer
+- Curd
+- Roti
+- Eggs
+- Chicken
+- Fruits
+
+International:
+
+- Oats
+- Greek yogurt
+- Pasta
+- Rice bowls
+- Sandwiches
+- Smoothies
+
+The system should provide general sports nutrition guidance, not medical advice.
+
+Do not claim that a meal plan is medically prescribed.
+
+==================================================
+14. SOCIAL FEED
+==================================================
+
+Create:
+
+ATHLETIQ FEED
+
+Users can:
+
+- Create posts
+- Upload photos
+- Upload videos
+- Like posts
+- Comment
+- Follow athletes
+- View profiles
+
+Create realistic demo posts.
+
+Post examples:
+
+"First 100-ball session completed."
+
+"New personal best!"
+
+"Training before school."
+
+"Won today's match!"
+
+Create a clean social-media-style feed.
+
+==================================================
+15. CHALLENGES
+==================================================
+
+Create challenges.
+
+Examples:
+
+7-Day Training Streak
+
+100 Push-ups Challenge
+
+30-Day Cricket Challenge
+
+10K Sprint Challenge
+
+Free Throw Challenge
+
+Show:
+
+- Challenge description
+- Participants
+- Progress
+- Leaderboard
+- Join button
+
+==================================================
+16. LIVE SPORTS
+==================================================
+
+Create a LIVE MATCHES section.
+
+Show:
+
+- Live matches
+- Upcoming matches
+- Recent matches
+
+Support:
+
+- Cricket
+- Football
+- Tennis
+- Basketball
+
+Show:
+
+- Teams/players
+- Score
+- Time
+- Match status
+
+IMPORTANT:
+
+If a real sports API is not available, use clearly labeled demo data.
+
+Do NOT pretend that demo scores are live real-world scores.
+
+Create an API integration layer so a real sports data provider can be connected later.
+
+==================================================
+17. LIVE STREAMING
+==================================================
+
+Create a LIVE section.
+
+Users should be able to see:
+
+LIVE NOW
+
+- Athlete
+- Sport
+- Stream title
+- Viewer count
+- Follow button
+
+Create screens for:
+
+1. Live Streams
+2. Watch Stream
+3. Go Live
+4. Stream Setup
+5. Live Stream
+6. Live Chat
+7. Stream End
+8. My Streams
+
+Go Live settings:
+
+- Stream title
+- Sport
+- Description
+- Privacy:
+  - Public
+  - Followers only
+  - Private
+
+During livestream:
+
+- Video area
+- Viewer count
+- Chat
+- Likes
+- Reactions
+- Follow
+- End stream
+
+IMPORTANT:
+
+Do not fake an actual video streaming service.
+
+If no streaming provider is configured, build a DEMO STREAM MODE and clearly label it.
+
+Create the architecture so a real service such as a future WebRTC/video-streaming provider can be connected.
+
+==================================================
+18. FACILITY BOOKING
+==================================================
+
+Create:
+
+EXPLORE FACILITIES
+
+Users can find:
+
+- Cricket grounds
+- Football fields
+- Tennis courts
+- Basketball courts
+
+Each facility should show:
+
+- Name
+- Sport
+- Location
+- Price
+- Rating
+- Available times
+- Photos
+- Amenities
+
+Create:
+
+Facility Details
+
+Select Date & Time
+
+Booking Confirmation
+
+My Bookings
+
+If no real booking provider is connected, use demo facilities and demo booking functionality.
+
+==================================================
+19. OFFLINE MODE
+==================================================
+
+The app should work offline as much as possible.
+
+Cache:
+
+- Profile
+- Goals
+- Saved drills
+- Workouts
+- Training history
+- Nutrition plans
+- Roadmap
+
+Show a small offline indicator.
+
+When the user reconnects, sync data if backend functionality is available.
+
+==================================================
+20. NOTIFICATIONS
+==================================================
+
+Create notification UI.
+
+Notifications:
+
+- Training reminders
+- Match alerts
+- Challenge updates
+- Booking confirmations
+- Rahul recommendations
+- New followers
+- Live stream notifications
+
+Create notification settings.
+
+==================================================
+21. PROFILE
+==================================================
+
+Create athlete profile.
+
+Show:
+
+- Profile photo
+- Name
+- Username
+- Sport
+- Level
+- Position
+- Bio
+- Training streak
+- Workouts
+- Personal records
+- Goals
+- Achievements
+
+Create:
+
+Edit Profile
+
+Settings
+
+Privacy
+
+Notifications
+
+Account
+
+==================================================
+22. ACHIEVEMENTS
+==================================================
+
+Create badges.
+
+Examples:
+
+First Workout
+
+7 Day Streak
+
+30 Day Streak
+
+100 Workouts
+
+First Personal Record
+
+Challenge Completed
+
+Early Bird
+
+Training Machine
+
+Show locked/unlocked states.
+
+==================================================
+23. NAVIGATION
+==================================================
+
+Use a mobile bottom navigation bar:
+
+HOME
+TRAIN
+LIVE
+FEED
+ME
+
+Add Rahul as a floating action button or prominent card.
+
+Desktop should use a responsive sidebar/navigation where appropriate.
+
+==================================================
+24. HOME PAGE LAYOUT
+==================================================
+
+The home page should prioritize:
+
+1. Greeting
+2. Today's training
+3. Progress
+4. Goals
+5. Rahul recommendation
+6. Recommended drills
+7. Nutrition
+8. Live matches
+9. Challenges
+
+Do not overcrowd the screen.
+
+==================================================
+25. UI COMPONENTS
+==================================================
+
+Create reusable components:
+
+- Button
+- Card
+- Modal
+- Bottom sheet
+- Input
+- Select
+- Search
+- Filter chips
+- Progress bar
+- Progress circle
+- Stat card
+- Workout card
+- Drill card
+- Goal card
+- Nutrition card
+- Live card
+- Social post
+- Profile avatar
+- Badge
+- Toast
+- Loading skeleton
+- Empty state
+- Error state
+
+==================================================
+26. RESPONSIVENESS
+==================================================
+
+The app must work well on:
+
+- Mobile
+- Tablet
+- Desktop
+
+Mobile is the priority.
+
+Use large tap targets.
+
+Minimum interactive target should be approximately 44px.
+
+==================================================
+27. DEMO DATA
+==================================================
+
+The first version must include enough realistic demo data to make the application feel alive.
+
+Create:
+
+4 sports
+
+40+ drills
+
+20+ workouts
+
+10+ challenges
+
+20+ social posts
+
+10+ live streams/matches
+
+10+ facilities
+
+Multiple sample athlete profiles
+
+Multiple nutrition meals
+
+Sample goals
+
+Sample progress data
+
+==================================================
+28. DATABASE / DATA STRUCTURE
+==================================================
+
+Create a clean data structure for:
+
+users
+
+profiles
+
+sports
+
+athlete_sports
+
+goals
+
+goal_milestones
+
+drills
+
+workouts
+
+workout_drills
+
+training_sessions
+
+drill_completions
+
+performance_metrics
+
+analysis_sessions
+
+analysis_metrics
+
+meal_plans
+
+meals
+
+nutrition_preferences
+
+chat_sessions
+
+chat_messages
+
+posts
+
+likes
+
+comments
+
+follows
+
+challenges
+
+challenge_participants
+
+live_streams
+
+live_stream_messages
+
+live_stream_viewers
+
+notifications
+
+facilities
+
+bookings
+
+achievements
+
+user_achievements
+
+Keep the structure modular.
+
+==================================================
+29. PERFORMANCE
+==================================================
+
+The application should load quickly.
+
+Avoid unnecessary huge images.
+
+Lazy load where appropriate.
+
+Do not run expensive operations unnecessarily.
+
+Keep components reusable.
+
+==================================================
+30. SECURITY
+==================================================
+
+Never expose:
+
+- API keys
+- Secret tokens
+- Database passwords
+
+Use environment variables.
+
+Validate user input.
+
+Do not trust frontend-only authorization.
+
+==================================================
+31. IMPORTANT DEMO RULE
+==================================================
+
+Whenever a feature requires an external paid API or service, build the UI and a working demo version first.
+
+Clearly label demo information.
+
+Examples:
+
+DEMO RAHUL
+
+DEMO LIVE SCORE
+
+DEMO VIDEO ANALYSIS
+
+DEMO LIVE STREAM
+
+DEMO FACILITY
+
+Do not falsely claim these features are connected to real services.
+
+==================================================
+32. APP EXPERIENCE
+==================================================
+
+The app should feel like one connected product.
+
+Example user journey:
+
+Open Athletiq
+
+→ Sign up
+
+→ Complete athlete profile
+
+→ Choose cricket
+
+→ Select beginner
+
+→ Set goal: Improve batting
+
+→ Athletiq creates a roadmap
+
+→ Home shows today's training
+
+→ User starts batting workout
+
+→ Completes workout
+
+→ Progress updates
+
+→ Rahul recommends another drill
+
+→ User checks nutrition
+
+→ User watches a live stream
+
+→ User posts training progress
+
+This complete journey must work in the demo.
+
+==================================================
+33. DO NOT BUILD A FAKE UI ONLY
+==================================================
+
+Buttons should actually work.
+
+Navigation should work.
+
+Forms should save.
+
+Goals should update.
+
+Workout completion should update progress.
+
+Likes should work.
+
+Comments should work.
+
+Follow buttons should work.
+
+Bookmarks should work.
+
+Challenge progress should work.
+
+Bookings should work in demo mode.
+
+Notifications should work in demo mode.
+
+Rahul demo mode should respond.
+
+==================================================
+34. PRIORITY ORDER
+==================================================
+
+Because this is a large application, build it in this priority order:
+
+PHASE 1:
+Authentication
+Onboarding
+Home
+Profile
+Sports
+Training
+Drills
+Workouts
+Goals
+Progress
+
+PHASE 2:
+Rahul
+Nutrition
+Roadmaps
+Achievements
+Social Feed
+Challenges
+
+PHASE 3:
+Video Analysis
+Live Matches
+Facility Booking
+Notifications
+
+PHASE 4:
+Live Streaming
+Advanced AI
+Real computer vision
+Real sports APIs
+Real booking providers
+
+Do not stop after creating Phase 1.
+
+Continue building as much as the Replit environment allows.
+
+==================================================
+35. FINAL QUALITY REQUIREMENTS
+==================================================
+
+Before finishing:
+
+- Fix TypeScript errors
+- Fix broken routes
+- Fix broken buttons
+- Test forms
+- Test navigation
+- Test responsive layout
+- Test mobile layout
+- Test local persistence
+- Remove obvious placeholder text
+- Make sure there are no blank screens
+- Make sure every major section has content
+- Make sure the app can run from the Replit preview
+- Make sure the project can be deployed
+
+If something cannot be implemented without an external service, create a clean demo implementation and leave a clear integration point for the future.
+
+==================================================
+36. MOST IMPORTANT INSTRUCTION
+==================================================
+
+Do not overwhelm me with instructions.
+
+You are the developer.
+
+Build the application.
+
+If you need to make a technical decision, choose the simplest reliable option.
+
+If a feature requires a paid API, do not stop the build. Create a working demo version and make it easy to replace with the real service later.
+
+Keep the Athletiq design consistent across the entire application.
+
+The final result should feel like a real sports-development startup product.
+
+START BUILDING ATHLETIQ NOW.

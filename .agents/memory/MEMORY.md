@@ -1,0 +1,1 @@
+- [Athletiq demo architecture](athletiq-architecture.md) — keep the first release local-first and clearly label external-service features as demo mode.

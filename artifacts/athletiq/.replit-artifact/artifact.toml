@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Athletiq"
+description = "A mobile-first sports performance app that helps athletes train with focused workouts, track progress, set goals, and get guidance from Rahul, a personalized sports assistant."
+version = "1.0.0"
+id = "artifacts/athletiq"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24852
+
+[services.development]
+run = "pnpm --filter @workspace/athletiq run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/athletiq", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/athletiq/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24852"
+BASE_PATH = "/"
