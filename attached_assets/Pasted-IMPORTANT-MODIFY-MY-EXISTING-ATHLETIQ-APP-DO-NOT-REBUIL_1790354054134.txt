@@ -1,0 +1,257 @@
+IMPORTANT: MODIFY MY EXISTING ATHLETIQ APP. DO NOT REBUILD IT FROM SCRATCH.
+
+I have only 2–3 hours left, so prioritize working functionality and polish over explaining things to me.
+
+FIRST CHANGE:
+In athlete onboarding, the sport choices currently show:
+Football, Cricket, Basketball, Running.
+
+Change this to:
+Football, Cricket, Basketball, Tennis.
+
+Remove Running as a selectable core sport.
+
+IMPORTANT:
+Do NOT remove running/sprinting exercises from the training system. Running can still be used as a conditioning exercise, but it must NOT be a primary sport.
+
+TENNIS MUST BE SUPPORTED THROUGHOUT THE EXISTING APP:
+- onboarding
+- athlete profile
+- sport selector
+- goals
+- training recommendations
+- drills
+- workouts
+- performance metrics
+- Rahul recommendations
+- video analysis
+- live scores
+- favorites
+- notifications
+- challenges
+- feed/profile where sport is displayed
+
+Tennis onboarding options:
+- Singles
+- Doubles
+- Both
+
+Tennis performance metrics:
+- Serve accuracy
+- Rally consistency
+- Movement
+- Reaction time
+- Shot accuracy
+
+Do not break any existing Football, Cricket, or Basketball functionality.
+
+AFTER THAT, AUDIT THE EXISTING APP QUICKLY.
+
+MAIN APP STRUCTURE SHOULD BE:
+Home | Train | Live | Feed | Me
+
+Keep the existing design and functionality where it already works.
+
+HOME:
+Make it feel like a professional athlete dashboard with:
+- athlete greeting/profile
+- selected sports
+- today's training
+- streak
+- weekly progress
+- goals
+- recommended training
+- performance summary
+- Rahul recommendation
+- live matches
+- challenges
+
+TRAIN:
+- sport-specific drills
+- workouts
+- search/filter
+- difficulty
+- duration
+- goals
+- bookmarks
+- workout history
+- active workout mode
+- timer
+- sets/reps/rest
+- completion tracking
+
+PERFORMANCE:
+- training statistics
+- streak
+- completed workouts
+- training time
+- completion rate
+- personal records
+- charts
+- sport-specific metrics
+
+RAHUL:
+Keep Rahul available as the AI sports assistant.
+Personalize responses using the athlete's:
+- sports
+- level
+- position/type
+- goals
+- training history
+- performance
+
+If real AI is not connected, use clearly labeled DEMO functionality.
+NEVER pretend demo AI is real AI.
+
+VIDEO ANALYSIS:
+Keep upload/record video functionality.
+Support:
+- technique
+- movement
+- form
+- speed
+- balance
+
+If computer vision is not actually connected, clearly label the result as DEMO ANALYSIS.
+Never fake real computer vision.
+
+LIVE:
+Keep LIVE SCORES separate from LIVE STREAMING.
+
+Live scores must support:
+- Cricket
+- Football
+- Tennis
+- Basketball
+
+Include:
+- live
+- upcoming
+- completed
+- score
+- teams/players
+- competition
+- status
+- match details
+- favorites
+- notifications
+
+If a real sports API is not connected, clearly label the data DEMO DATA.
+Never present fake scores as real live scores.
+
+LIVE STREAMING:
+Keep it separate from scores.
+If actual streaming infrastructure isn't connected, keep a clear DEMO STREAM experience rather than pretending a real stream exists.
+
+FEED:
+- posts
+- photos/videos
+- likes
+- comments
+- sharing
+- following
+- athlete profiles
+- achievements
+- personal records
+- challenges
+
+ME:
+- profile
+- sports
+- level
+- goals
+- stats
+- achievements
+- training history
+- settings
+- privacy
+
+FACILITIES:
+Keep facility discovery/booking architecture.
+Support:
+- cricket
+- football
+- tennis
+- basketball
+- gyms
+Use location services where available.
+If real booking/payment APIs aren't connected, clearly label demo functionality.
+
+NOTIFICATIONS:
+Support:
+- training reminders
+- goals
+- Rahul
+- social
+- facilities
+- challenges
+- live matches
+- match results
+- followed teams/players/matches
+
+Keep notifications customizable.
+
+ACHIEVEMENTS:
+- First Workout
+- 7 Day Streak
+- 30 Day Streak
+- 100 Workouts
+- First PR
+- Challenge Completed
+- Training Machine
+- Early Bird
+- Consistency King
+
+Automatically track streaks and personal records where existing data allows.
+
+ONBOARDING:
+Keep the existing step-by-step onboarding.
+Collect:
+- name
+- age/date of birth
+- height
+- weight
+- profile image
+- sports
+- level
+- experience
+- position/type
+- goals
+- equipment
+- training days
+- training location
+- available training time
+- nutrition preferences
+
+Sport-specific:
+Cricket: Batter, Bowler, All-rounder, Wicketkeeper
+Football: Goalkeeper, Defender, Midfielder, Forward
+Basketball: Point Guard, Shooting Guard, Small Forward, Power Forward, Center
+Tennis: Singles, Doubles, Both
+
+DESIGN:
+Keep the existing Athletiq visual style.
+Modern athletic sports-dashboard feel.
+Primary green, dark professional UI, clean cards, strong typography.
+Keep dark/light/system mode if already implemented.
+Keep mobile-first responsive design.
+
+IMPORTANT RULES:
+- Modify the existing project.
+- Do NOT rebuild from scratch.
+- Do NOT delete working features.
+- Do NOT introduce unnecessary complexity.
+- Do NOT spend time explaining code to me.
+- Make the changes directly.
+- Fix TypeScript/build errors you encounter.
+- Check the mobile preview after changes.
+- Prioritize working UI and user flow.
+- If an external API is unavailable, create a clean demo/fallback instead of blocking the app.
+- Never expose API keys in frontend code.
+- Never claim fake data is real.
+- Keep the app publishable.
+
+At the end, test the complete flow:
+Login → Onboarding → Tennis selection → Home → Train → Workout → Performance → Rahul → Live → Feed → Me.
+
+Start implementing now.
