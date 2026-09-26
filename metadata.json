@@ -1,0 +1,7 @@
+{
+  "name": "Athletiq",
+  "description": "Athletiq is a personal sports performance platform for athletes to train with intent, track progress, and sharpen their game.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

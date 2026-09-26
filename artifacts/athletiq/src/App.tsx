@@ -26,7 +26,7 @@ const navItems = [
 function Logo({ compact = false }: { compact?: boolean }) {
   return <Link href="/home" className="flex items-center gap-2.5 w-fit" data-testid="link-logo">
     <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent text-accent-foreground"><Zap size={20} strokeWidth={3} /></span>
-    {!compact && <span className="font-display text-2xl font-extrabold uppercase tracking-tight text-sidebar">athletiq<span className="text-accent">.</span></span>}
+    {!compact && <span className="font-display text-2xl font-extrabold uppercase tracking-tight text-accent">athletiq<span className="text-accent">.</span></span>}
   </Link>;
 }
 
@@ -60,7 +60,7 @@ function Shell({ children }: { children: React.ReactNode }) {
       <Link href="/profile" className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-sidebar-foreground/65 hover:bg-sidebar-accent hover:text-sidebar-foreground" data-testid="link-profile-sidebar"><Settings size={18} />Settings & profile</Link><Link href="/video-analysis" className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-sidebar-foreground/65 hover:bg-sidebar-accent hover:text-sidebar-foreground" data-testid="link-video-analysis-sidebar"><Video size={18} />Video analysis</Link>
     </aside>
     <header className="sticky top-0 z-20 flex h-[70px] items-center justify-between border-b border-border/70 bg-background/90 px-4 backdrop-blur lg:ml-64 lg:px-10">
-      <div className="flex items-center gap-3 lg:hidden"><Logo compact /><span className="font-display text-xl font-bold uppercase">athletiq<span className="text-accent">.</span></span></div>
+      <div className="flex items-center gap-3 lg:hidden"><Logo compact /><span className="font-display text-xl font-bold uppercase text-accent">athletiq<span className="text-accent">.</span></span></div>
       <div className="hidden lg:block"><p className="font-mono text-[10px] uppercase tracking-[.2em] text-muted-foreground">{new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'short' })}</p><p className="font-display text-xl font-bold uppercase">Train with intent.</p></div>
       <div className="ml-auto flex items-center gap-2"><Link href="/rahul" className="hidden min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-bold text-primary sm:flex" data-testid="link-rahul-header"><Sparkles size={15} />Ask Rahul</Link><Link href="/notifications" className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-muted-foreground hover:text-foreground" data-testid="button-notifications"><Bell size={18} /></Link><Link href="/profile" className="lg:hidden" data-testid="link-profile-mobile"><Avatar name={initials} small /></Link></div>
     </header>
