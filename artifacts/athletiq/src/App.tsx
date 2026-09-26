@@ -180,11 +180,13 @@ function RahulPage() {
   const athlete = storage.get<Athlete>('athletiq-athlete', { name: 'Athlete', sport: 'Football', level: 'Intermediate', position: 'Winger', goals: ['Speed'], preferences: [] });
   const [messages, setMessages] = useState<{ from: 'rahul' | 'you'; text: string }[]>([{ from: 'rahul', text: `Hey ${athlete.name}. I’ve got your ${athlete.sport.toLowerCase()} context. What do you want to sharpen today?` }]);
   const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const send = async (text = input) => {
     const message = text.trim();
-    if (!message) return;
+    if (!message || isLoading) return;
     setMessages((m) => [...m, { from: 'you', text: message }]);
     setInput('');
+    setIsLoading(true);
     try {
       const response = await fetch('/api/rahul/chat', {
         method: 'POST',
@@ -196,9 +198,11 @@ function RahulPage() {
       setMessages((m) => [...m, { from: 'rahul', text: result.reply! }]);
     } catch {
       setMessages((m) => [...m, { from: 'rahul', text: 'I’m having trouble reaching the AI coach right now. Try again in a moment.' }]);
+    } finally {
+      setIsLoading(false);
     }
   };
-  return <div className="mx-auto max-w-4xl px-4 py-7 sm:px-7 lg:py-10"><div className="rounded-[1.8rem] bg-sidebar p-6 text-sidebar-foreground sm:p-9"><div className="flex items-center gap-4"><span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-accent-foreground"><Sparkles size={27} /></span><div><Pill tone="orange">DEMO RAHUL</Pill><h1 className="mt-1 font-display text-4xl font-black uppercase">Your coach, in the pocket.</h1></div></div><p className="mt-5 max-w-xl text-sm leading-relaxed text-sidebar-foreground/60">A demo coaching layer using your sport, level, goals, and training history. Useful guidance, not medical advice.</p></div><div className="mt-5 rounded-2xl border border-border bg-card"><div className="min-h-[360px] space-y-4 p-5 sm:p-7">{messages.map((m, i) => <div key={`${m.from}-${i}`} className={`flex gap-3 ${m.from === 'you' ? 'justify-end' : ''}`}><div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.from === 'you' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>{m.text}</div></div>)}</div><div className="border-t border-border p-4"><div className="scrollbar-none flex gap-2 overflow-x-auto pb-3">{['What should I train today?', 'How do I recover?', 'What should I eat?'].map((p) => <button key={p} onClick={() => send(p)} className="shrink-0 rounded-full border border-border px-3 py-2 text-xs font-bold hover:border-primary hover:text-primary" data-testid={`button-prompt-${p.slice(0, 5).toLowerCase()}`}>{p}</button>)}</div><form onSubmit={(e) => { e.preventDefault(); send(); }} className="flex gap-2"><input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask Rahul something useful..." className="h-12 min-w-0 flex-1 rounded-xl border border-input bg-background px-4 text-sm outline-none focus:ring-2 focus:ring-primary" data-testid="input-rahul-message" /><Button type="submit" data-testid="button-send-rahul"><ArrowRight size={17} /></Button></form></div></div></div>;
+  return <div className="mx-auto max-w-4xl px-4 py-7 sm:px-7 lg:py-10"><div className="rounded-[1.8rem] bg-sidebar p-6 text-sidebar-foreground sm:p-9"><div className="flex items-center gap-4"><span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-accent-foreground"><Sparkles size={27} /></span><div><Pill tone="orange">DEMO RAHUL</Pill><h1 className="mt-1 font-display text-4xl font-black uppercase">Your coach, in the pocket.</h1></div></div><p className="mt-5 max-w-xl text-sm leading-relaxed text-sidebar-foreground/60">A demo coaching layer using your sport, level, goals, and training history. Useful guidance, not medical advice.</p></div><div className="mt-5 rounded-2xl border border-border bg-card" aria-busy={isLoading}><div className="min-h-[360px] space-y-4 p-5 sm:p-7">{messages.map((m, i) => <div key={`${m.from}-${i}`} className={`flex gap-3 ${m.from === 'you' ? 'justify-end' : ''}`}><div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.from === 'you' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>{m.text}</div></div>)}</div><div className="border-t border-border p-4"><div className="scrollbar-none flex gap-2 overflow-x-auto pb-3">{['What should I train today?', 'How do I recover?', 'What should I eat?'].map((p) => <button key={p} onClick={() => send(p)} disabled={isLoading} className="shrink-0 rounded-full border border-border px-3 py-2 text-xs font-bold hover:border-primary hover:text-primary" data-testid={`button-prompt-${p.slice(0, 5).toLowerCase()}`}>{p}</button>)}</div><form onSubmit={(e) => { e.preventDefault(); send(); }} className="flex gap-2"><input value={input} onChange={(e) => setInput(e.target.value)} disabled={isLoading} placeholder="Ask Rahul something useful..." className="h-12 min-w-0 flex-1 rounded-xl border border-input bg-background px-4 text-sm outline-none focus:ring-2 focus:ring-primary" data-testid="input-rahul-message" /><Button type="submit" disabled={isLoading} data-testid="button-send-rahul">{isLoading ? '...' : <ArrowRight size={17} />}</Button></form></div></div></div>;
 }
 
 function NutritionPage() {

@@ -8,6 +8,7 @@ type RahulRequest = {
     level?: unknown;
     position?: unknown;
     goals?: unknown;
+    preferences?: unknown;
   };
 };
 
@@ -49,6 +50,7 @@ router.post("/rahul/chat", async (req, res) => {
     `Level: ${typeof athlete.level === "string" ? athlete.level : "not set"}`,
     `Position or event: ${typeof athlete.position === "string" ? athlete.position : "not set"}`,
     `Goals: ${Array.isArray(athlete.goals) ? athlete.goals.filter((goal): goal is string => typeof goal === "string").join(", ") || "not set" : "not set"}`,
+    `Training preferences: ${Array.isArray(athlete.preferences) ? athlete.preferences.filter((preference): preference is string => typeof preference === "string").join(", ") || "not set" : "not set"}`,
   ].join("\n");
 
   const prompt = `You are Rahul, Athletiq's practical sports performance coach.
