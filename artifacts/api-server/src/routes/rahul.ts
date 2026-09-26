@@ -20,6 +20,7 @@ type GeminiResponse = {
 };
 
 const router: IRouter = Router();
+const GEMINI_MODEL = "gemini-3-flash-preview";
 
 router.post("/rahul/chat", async (req, res) => {
   const body = req.body as RahulRequest;
@@ -60,28 +61,35 @@ Athlete question:
 ${message}`;
 
   try {
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": apiKey,
-        },
-        body: JSON.stringify({
-          contents: [{ role: "user", parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 8192,
+    let response: Response | undefined;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": apiKey,
           },
-        }),
-        signal: AbortSignal.timeout(20000),
-      },
-    );
+          body: JSON.stringify({
+            contents: [{ role: "user", parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 8192,
+            },
+          }),
+          signal: AbortSignal.timeout(20000),
+        },
+      );
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      req.log?.error?.({ status: response.status, details: errorText.slice(0, 500) }, "Gemini Rahul request failed");
+      if (response.ok || ![429, 500, 502, 503, 504].includes(response.status) || attempt === 1) break;
+      await new Promise((resolve) => setTimeout(resolve, 400));
+    }
+
+    if (!response || !response.ok) {
+      const status = response?.status ?? 502;
+      const errorText = response ? await response.text() : "No response from Gemini";
+      req.log?.error?.({ status, details: errorText.slice(0, 500) }, "Gemini Rahul request failed");
       res.status(502).json({ error: "Rahul could not answer right now" });
       return;
     }
